@@ -10,9 +10,9 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
     console.log(toggleShowPassword)
     // Определяем компонент TextField, принимающий несколько пропсов
     return (
-        <div className='form-group row m-2'>
+        <div className="form-group row m-2">
             <label htmlFor={name}>{label}</label>
-            <div className='input-group col-sm-0 has-validation'>
+            <div className="input-group col-sm-0 has-validation">
                 <input
                     className={`border-2 form-control${
                         error ? ' is-invalid' : ''
@@ -25,8 +25,8 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
                 />
                 {type === 'password' && (
                     <button
-                        className='btn btn-outline-secondary'
-                        type='button'
+                        className="btn btn-outline-secondary"
+                        type="button"
                         onClick={toggleShowPassword}
                     >
                         <i
@@ -38,7 +38,7 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
                 )}
 
                 {/* Рендерим сообщение об ошибке, если оно есть */}
-                {error && <div className='invalid-feedback'>{error}</div>}
+                {error && <div className="invalid-feedback">{error}</div>}
             </div>
         </div>
     )

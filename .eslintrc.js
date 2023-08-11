@@ -24,8 +24,9 @@ module.exports = {
         indent: ['error', 4],
         semi: [0, 'always'],
         'space-before-function-paren': [
-            'error', 
-            { anonymous: 'always', named: 'never' }],
-        'quotes': ['error', 'single', { allowTemplateLiterals: true }]
+            'error',
+            { anonymous: 'always', named: 'never' }
+        ],
+        quotes: ['error', 'single', { allowTemplateLiterals: true }]
     }
 }

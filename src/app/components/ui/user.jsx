@@ -1,7 +1,7 @@
-import React from "react"
-import BookMark from "../bookmark"
-import PropTypes from "prop-types"
-import Quality from './qualities/quality';
+import React from 'react'
+import BookMark from '../bookmark'
+import PropTypes from 'prop-types'
+import Quality from './qualities/quality'
 
 const User = ({
     _id,
@@ -12,7 +12,7 @@ const User = ({
     rate,
     onDelete,
     bookmark,
-    onToggleBookMark,
+    onToggleBookMark
 }) => {
     return (
         <tr>
@@ -34,7 +34,7 @@ const User = ({
             <td>
                 <button
                     onClick={() => onDelete(_id)}
-                    className='btn btn-danger'
+                    className="btn btn-danger"
                 >
                     delete
                 </button>
@@ -52,7 +52,7 @@ User.propTypes = {
     rate: PropTypes.number.isRequired,
     onDelete: PropTypes.func.isRequired,
     bookmark: PropTypes.bool.isRequired,
-    onToggleBookMark: PropTypes.func.isRequired,
+    onToggleBookMark: PropTypes.func.isRequired
 }
 
 export default User

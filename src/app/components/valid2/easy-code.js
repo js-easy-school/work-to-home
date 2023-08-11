@@ -16,23 +16,21 @@ let config = {
 
 let errors = {}
 for (const fieldName in data) {
-    const fieldConfig = config[fieldName];
+    const fieldConfig = config[fieldName]
     for (const validateMethod in fieldConfig) {
-        const fieldValue = data[fieldName];
-        const errorConfig = fieldConfig[validateMethod];
+        const fieldValue = data[fieldName]
+        const errorConfig = fieldConfig[validateMethod]
 
-        const error = errorConfig(fieldValue);
+        const error = errorConfig(fieldValue)
         if (error) {
-            errors[fieldName] = error;
-            break;
+            errors[fieldName] = error
+            break
         }
     }
 }
 
-console.log(errors);
+console.log(errors)
 
 const years = 17
 const cf = config.age.minimum(years)
 cf
-
-

@@ -9,33 +9,33 @@ export function validator(data, config) {
             const validationValue = fieldValidations[validationMethod]
             let statusValidate
             switch (validationMethod) {
-                // Метод "isRequired" проверяет, что поле не пустое
-                case "isRequired":
-                    // Если поле пустое, возвращаем сообщение об ошибке
-                    statusValidate = fieldValue.trim() === ""
-                    break
-                case "isEmail": {
-                    const emailRegExp = /^\S+@\S+\.\S+$/g
-                    statusValidate = !emailRegExp.test(fieldValue)
-                    break
-                }
-                case "isCapitalSymbol": {
-                    const capitalRegExp = /[A-Z]+/g
-                    statusValidate = !capitalRegExp.test(fieldValue)
-                    break
-                }
-                case "isContainDigit": {
-                    const digitRegExp = /\d+/g
-                    statusValidate = !digitRegExp.test(fieldValue)
-                    break
-                }
-                case "min": {
-                    statusValidate = fieldValue.length < validationValue.value
-                    break
-                }
-                // Добавьте другие методы валидации, если необходимо
-                default:
-                    break
+            // Метод "isRequired" проверяет, что поле не пустое
+            case 'isRequired':
+                // Если поле пустое, возвращаем сообщение об ошибке
+                statusValidate = fieldValue.trim() === ''
+                break
+            case 'isEmail': {
+                const emailRegExp = /^\S+@\S+\.\S+$/g
+                statusValidate = !emailRegExp.test(fieldValue)
+                break
+            }
+            case 'isCapitalSymbol': {
+                const capitalRegExp = /[A-Z]+/g
+                statusValidate = !capitalRegExp.test(fieldValue)
+                break
+            }
+            case 'isContainDigit': {
+                const digitRegExp = /\d+/g
+                statusValidate = !digitRegExp.test(fieldValue)
+                break
+            }
+            case 'min': {
+                statusValidate = fieldValue.length < validationValue.value
+                break
+            }
+            // Добавьте другие методы валидации, если необходимо
+            default:
+                break
             }
             if (statusValidate) return validationValue.message
         }

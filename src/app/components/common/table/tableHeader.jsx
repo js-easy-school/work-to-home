@@ -30,11 +30,11 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
                     >
                         {columns[column].name}
                         {selectedSort.path === columns[column].path &&
-                            (selectedSort.order === 'asc'
-                                ? <i className="bi bi-caret-down-fill"></i>
-                                : <i className="bi bi-caret-up-fill"></i>
-                            )
-                        }
+                            (selectedSort.order === 'asc' ? (
+                                <i className="bi bi-caret-down-fill"></i>
+                            ) : (
+                                <i className="bi bi-caret-up-fill"></i>
+                            ))}
                     </th>
                 ))}
                 {/* <th onClick={() => handleSort('name')} scope="col">

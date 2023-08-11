@@ -22,5 +22,5 @@ const fetchAll = () =>
     })
 
 export default {
-    fetchAll,
+    fetchAll
 }

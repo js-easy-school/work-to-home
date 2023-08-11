@@ -8,6 +8,7 @@ const GroupList = ({
     valueProperty,
     contentProperty
 }) => {
+    console.log(items)
     if (!Array.isArray(items)) {
         console.log(!Array.isArray(items))
         return (

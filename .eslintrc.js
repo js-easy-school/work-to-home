@@ -1,32 +1,43 @@
-module.exports = {
-    env: {
-        browser: true,
-        es2021: true
-    },
-    extends: ['standard', 'plugin:react/recommended'],
-    overrides: [
-        {
-            env: {
-                node: true
-            },
-            files: ['.eslintrc.{js,cjs}'],
-            parserOptions: {
-                sourceType: 'script'
-            }
-        }
+{
+    "extends": [
+      "standard",
+      "plugin:react/recommended"
     ],
-    parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module'
+    "plugins": [
+      "react"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
     },
-    plugins: ['react'],
-    rules: {
-        indent: ['error', 4],
-        semi: [0, 'always'],
-        'space-before-function-paren': [
-            'error',
-            { anonymous: 'always', named: 'never' }
-        ],
-        quotes: ['error', 'single', { allowTemplateLiterals: true }]
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "rules": {
+      "react/prop-types": "off",
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "no-unused-vars": "warn",
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true,
+          "allowTemplateLiterals": true
+        }
+      ]
     }
-}
+  }
+  

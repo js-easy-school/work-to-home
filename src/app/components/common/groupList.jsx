@@ -1,13 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const GroupList = ({
-    items,
-    onItemSelect,
-    selectedItem,
-    valueProperty,
-    contentProperty
-}) => {
+const GroupList = ({ items, onItemSelect, selectedItem, valueProperty, contentProperty }) => {
     if (!Array.isArray(items)) {
         console.log(!Array.isArray(items))
         return (
@@ -15,10 +9,7 @@ const GroupList = ({
                 {Object.keys(items).map((item) => (
                     <li
                         key={items[item][valueProperty]}
-                        className={
-                            'list-group-item' +
-                            (items[item] === selectedItem ? ' active' : '')
-                        }
+                        className={'list-group-item' + (items[item] === selectedItem ? ' active' : '')}
                         onClick={() => onItemSelect(items[item])}
                         role="button"
                     >
@@ -34,10 +25,7 @@ const GroupList = ({
             {items.map((item) => (
                 <li
                     key={item[valueProperty]}
-                    className={
-                        'list-group-item' +
-                        (item === selectedItem ? ' active' : '')
-                    }
+                    className={'list-group-item' + (item === selectedItem ? ' active' : '')}
                     onClick={() => onItemSelect(item)}
                     role="button"
                 >

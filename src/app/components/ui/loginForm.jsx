@@ -71,26 +71,9 @@ const LoginForm = () => {
                 <div className="col-md-6 offset-md-3 shadow p-0">
                     <h3 className="ms-4 mb-4">Login</h3>
                     <form onSubmit={handleSubmit}>
-                        <TextField
-                            label="Электронная почта"
-                            name="email"
-                            value={data.email}
-                            onChange={handleChange}
-                            error={errors.email}
-                        />
-                        <TextField
-                            label="Пароль"
-                            type="password"
-                            name="password"
-                            value={data.password}
-                            onChange={handleChange}
-                            error={errors.password}
-                        />
-                        <button
-                            className="btn btn-outline-secondary m-3 border-2"
-                            type="submit"
-                            disabled={!isValid}
-                        >
+                        <TextField label="Электронная почта" name="email" value={data.email} onChange={handleChange} error={errors.email} />
+                        <TextField label="Пароль" type="password" name="password" value={data.password} onChange={handleChange} error={errors.password} />
+                        <button className="btn btn-outline-secondary m-3 border-2" type="submit" disabled={!isValid}>
                             Submit
                         </button>
                     </form>

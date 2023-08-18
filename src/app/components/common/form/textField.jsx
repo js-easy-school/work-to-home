@@ -14,9 +14,7 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
             <label htmlFor={name}>{label}</label>
             <div className="input-group col-sm-0 has-validation">
                 <input
-                    className={`border-2 form-control${
-                        error ? ' is-invalid' : ''
-                    }`}
+                    className={`border-2 form-control${error ? ' is-invalid' : ''}`}
                     type={showPassword ? 'text' : type}
                     id={name}
                     name={name}
@@ -24,16 +22,8 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
                     onChange={onChange}
                 />
                 {type === 'password' && (
-                    <button
-                        className="btn btn-outline-secondary"
-                        type="button"
-                        onClick={toggleShowPassword}
-                    >
-                        <i
-                            className={
-                                'bi bi-eye' + (showPassword ? '-slash' : '')
-                            }
-                        ></i>
+                    <button className="btn btn-outline-secondary" type="button" onClick={toggleShowPassword}>
+                        <i className={'bi bi-eye' + (showPassword ? '-slash' : '')}></i>
                     </button>
                 )}
 

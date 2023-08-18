@@ -27,9 +27,7 @@ const users = [
 const UsersTable2 = () => {
     const [searchTerm, setSearchTerm] = useState('')
 
-    const filteredUsers = users.filter((user) =>
-        user.name.toLowerCase().includes(searchTerm.toLowerCase())
-    )
+    const filteredUsers = users.filter((user) => user.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
     const handleSearch = (event) => {
         setSearchTerm(event.target.value)
@@ -37,12 +35,7 @@ const UsersTable2 = () => {
 
     return (
         <div>
-            <input
-                type="text"
-                value={searchTerm}
-                onChange={handleSearch}
-                placeholder="Введите имя"
-            />
+            <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Введите имя" />
             <table>
                 <thead>
                     <tr>

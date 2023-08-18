@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const LoginForm = () => {
     const [email, setEmail] = useState('')
@@ -11,9 +11,7 @@ const LoginForm = () => {
     // }
     const handleEmailChange = (event) => {
         const emailValue = event.target.value
-        const emailErrors = !emailValue.includes('@')
-            ? { email: 'Некорректный адрес почты' }
-            : { email: null } // изменение здесь
+        const emailErrors = !emailValue.includes('@') ? { email: 'Некорректный адрес почты' } : { email: null } // изменение здесь
         setErrors({ ...errors, ...emailErrors })
         setEmail(emailValue)
     }
@@ -47,24 +45,12 @@ const LoginForm = () => {
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="email">Почта</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={email}
-                    onChange={handleEmailChange}
-                />
+                <input type="email" id="email" name="email" value={email} onChange={handleEmailChange} />
                 {errors.email && <p>{errors.email}</p>}
             </div>
             <div>
                 <label htmlFor="password">Пароль</label>
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    value={password}
-                    onChange={handlePasswordChange}
-                />
+                <input type="password" id="password" name="password" value={password} onChange={handlePasswordChange} />
                 {errors.password && <p>{errors.password}</p>}
             </div>
             <button type="submit">Войти</button>

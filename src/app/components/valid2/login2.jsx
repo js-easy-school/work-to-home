@@ -55,21 +55,8 @@ const Login2 = () => {
                 <pre>{JSON.stringify(data, null, 2)}</pre>
             </div>
             <form onSubmit={handleSubmit}>
-                <TextField2
-                    label="Электронная почта"
-                    name="email"
-                    value={email}
-                    onChange={handleChange}
-                    error={errors.email}
-                />
-                <TextField2
-                    label="Пароль"
-                    type="password"
-                    name="password"
-                    value={password}
-                    onChange={handleChange}
-                    error={errors.password}
-                />
+                <TextField2 label="Электронная почта" name="email" value={email} onChange={handleChange} error={errors.email} />
+                <TextField2 label="Пароль" type="password" name="password" value={password} onChange={handleChange} error={errors.password} />
                 <button type="submit">Submit</button>
             </form>
         </div>

@@ -18,11 +18,7 @@ const TableBodyWithRoutes = ({ data, columns }) => {
                             ))}
                         </tr>
                     </thead>
-                    <TableBody
-                        data={data}
-                        columns={columns}
-                        onLinkClick={handleLinkClick}
-                    />
+                    <TableBody data={data} columns={columns} onLinkClick={handleLinkClick} />
                 </table>
             </Route>
             <Route path="/details/:id">

@@ -59,23 +59,13 @@ const UsersList = () => {
 
     if (users) {
         const filteredUsers = searchTerm
-            ? users.filter((user) =>
-                  user.name.toLowerCase().includes(searchTerm.toLowerCase())
-              )
+            ? users.filter((user) => user.name.toLowerCase().includes(searchTerm.toLowerCase()))
             : selectedProf
-            ? users.filter(
-                  (user) =>
-                      JSON.stringify(user.profession) ===
-                      JSON.stringify(selectedProf)
-              )
+            ? users.filter((user) => JSON.stringify(user.profession) === JSON.stringify(selectedProf))
             : users
 
         const count = filteredUsers.length
-        const sortedUsers = _.orderBy(
-            filteredUsers,
-            [sortBy.path],
-            [sortBy.order]
-        )
+        const sortedUsers = _.orderBy(filteredUsers, [sortBy.path], [sortBy.order])
         const usersCrop = paginate(sortedUsers, currentPage, pageSize)
         const clearFilter = () => {
             setSelectedProf()
@@ -85,28 +75,15 @@ const UsersList = () => {
             <div className="d-flex">
                 {professions && (
                     <div className="d-flex flex-column flex-shrink-0 p-3">
-                        <GroupList
-                            selectedItem={selectedProf}
-                            items={professions}
-                            onItemSelect={handleProfessionSelect}
-                        />
-                        <button
-                            className="btn btn-secondary mt-2"
-                            onClick={clearFilter}
-                        >
+                        <GroupList selectedItem={selectedProf} items={professions} onItemSelect={handleProfessionSelect} />
+                        <button className="btn btn-secondary mt-2" onClick={clearFilter}>
                             Очиститть
                         </button>
                     </div>
                 )}
                 <div className="d-flex flex-column">
                     <SearchStatus length={count} />
-                    <input
-                        type="text"
-                        name="search"
-                        placeholder="Поиск"
-                        value={searchTerm}
-                        onChange={handleSearch}
-                    />
+                    <input type="text" name="search" placeholder="Поиск" value={searchTerm} onChange={handleSearch} />
                     {count > 0 && (
                         <UserTable
                             users={usersCrop}
@@ -117,12 +94,7 @@ const UsersList = () => {
                         />
                     )}
                     <div className="d-flex justify-content-center">
-                        <Pagination
-                            itemsCount={count}
-                            pageSize={pageSize}
-                            currentPage={currentPage}
-                            onPageChange={handlePageChange}
-                        />
+                        <Pagination itemsCount={count} pageSize={pageSize} currentPage={currentPage} onPageChange={handlePageChange} />
                     </div>
                 </div>
             </div>

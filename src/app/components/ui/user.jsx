@@ -1,4 +1,3 @@
-import React from 'react'
 import BookMark from '../bookmark'
 import PropTypes from 'prop-types'
 import Quality from './qualities/quality'

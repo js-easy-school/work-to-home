@@ -1,5 +1,5 @@
 // 1. Импорт необходимых модулей из пакетов
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import api from '../../../api'
 import { useHistory } from 'react-router-dom'

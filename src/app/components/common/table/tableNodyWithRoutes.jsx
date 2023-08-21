@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { Switch, Route, useHistory, useParams } from 'react-router-dom'
 import TableBody from './tableBody'

@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 
 const TableHeader = ({ onSort, selectedSort, columns }) => {
@@ -22,11 +21,10 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
                         key={column}
                         onClick={columns[column].path ? () => handleSort(columns[column].path) : undefined}
                         {...{ role: columns[column].path && 'button' }}
-                        scope="col"
-                    >
+                        scope='col'>
                         {columns[column].name}
                         {selectedSort.path === columns[column].path &&
-                            (selectedSort.order === 'asc' ? <i className="bi bi-caret-down-fill"></i> : <i className="bi bi-caret-up-fill"></i>)}
+                            (selectedSort.order === 'asc' ? <i className='bi bi-caret-down-fill'></i> : <i className='bi bi-caret-up-fill'></i>)}
                     </th>
                 ))}
                 {/* <th onClick={() => handleSort('name')} scope="col">

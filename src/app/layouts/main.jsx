@@ -1,4 +1,3 @@
-import React from 'react'
 import FormUlbi from '../components/formUlbi'
 import Login2 from '../components/valid2/login2'
 import LoginForm from '../components/testValid'

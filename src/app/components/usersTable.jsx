@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 // import User from './user'
 // import TableHeader from './tableHeader'
 // import TableBody from './tableBody'
-import BookMark from './bookmark'
+import BookMark from './common/bookmark'
 import QualitiesList from './ui/qualities/qualitiesList'
 import Table from './common/table/table'
 

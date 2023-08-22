@@ -7,7 +7,7 @@ import GroupList from '../../common/groupList'
 import SearchStatus from '../../ui/searchStatus'
 import UserTable from '../../usersTable'
 import _ from 'lodash'
-const UsersList = () => {
+const UsersListPage = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [professions, setProfession] = useState()
     const [selectedProf, setSelectedProf] = useState()
@@ -102,8 +102,8 @@ const UsersList = () => {
     }
     return <span className="m-3">loading...</span>
 }
-UsersList.propTypes = {
+UsersListPage.propTypes = {
     users: PropTypes.array
 }
 
-export default UsersList
+export default UsersListPage

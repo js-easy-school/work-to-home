@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 // import TableHeader from './tableHeader'
 // import TableBody from './tableBody'
 import BookMark from './common/bookmark'
-import QualitiesList from './ui/qualities/qualitiesList'
+import Qualities from './ui/qualities'
+
 import Table from './common/table/table'
 
 const UserTable = ({ users, onSort, selectedSort, onToggleBookMark, onDelete }) => {
@@ -20,7 +21,7 @@ const UserTable = ({ users, onSort, selectedSort, onToggleBookMark, onDelete }) 
         },
         qualities: {
             name: 'Качества',
-            component: (user) => <QualitiesList qualities={user.qualities} />
+            component: (user) => <Qualities qualities={user.qualities} />
         },
         professions: { path: 'profession.name', name: 'Профессия' },
         completedMeetings: {
@@ -35,7 +36,7 @@ const UserTable = ({ users, onSort, selectedSort, onToggleBookMark, onDelete }) 
         },
         delete: {
             component: (user) => (
-                <button onClick={() => onDelete(user._id)} className="btn btn-danger">
+                <button onClick={() => onDelete(user._id)} className='btn btn-danger'>
                     delete
                 </button>
             )

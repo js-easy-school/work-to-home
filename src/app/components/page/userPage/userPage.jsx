@@ -1,9 +1,9 @@
-// 1. Импорт необходимых модулей из пакетов
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import api from '../../../api'
 import { useHistory } from 'react-router-dom'
-import QualitiesList from '../../ui/qualities/qualitiesList'
+import Qualities from '../../ui/qualities'
+
 
 // 2. Определение функционального компонента UserPage с параметром userId, который будет использоваться при извлечении данных о пользователе
 const UserPage = ({ userId }) => {
@@ -35,7 +35,7 @@ const UserPage = ({ userId }) => {
                     <h1>{user.name}</h1>
                     <h2>Профессия: {user.profession.name}</h2>
                     <p>
-                        <QualitiesList qualities={user.qualities} />
+                        <Qualities qualities={user.qualities} />
                     </p>
                     <p>completedMeetings: {user.completedMeetings}</p>
                     <h2>Rate: {user.rate}</h2>

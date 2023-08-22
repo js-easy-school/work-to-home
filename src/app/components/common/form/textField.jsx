@@ -7,7 +7,6 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
     const toggleShowPassword = () => {
         setShowPassword((prevState) => !prevState)
     }
-    console.log(toggleShowPassword)
     // Определяем компонент TextField, принимающий несколько пропсов
     return (
         <div className="form-group row m-2">

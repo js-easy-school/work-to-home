@@ -1,13 +1,22 @@
 import { useState, useEffect } from 'react'
 import { validator } from '../../utils/validator'
 import TextField from '../common/form/textField'
+import api from '../../api'
+import SelectField from './../common/form/selectField'
 
-const RegisterForm= () => {
-    // Используем хук useState для управления внутренним состоянием
-    const [data, setData] = useState({ email: '', password: '' })
+const RegisterForm = () => {
+    const [data, setData] = useState({
+        email: '',
+        password: '',
+        profession: ''
+    })
+    const [professions, setProfession] = useState([])
     const [errors, setErrors] = useState({})
 
-    // Обработчик изменения поля ввода
+    useEffect(() => {
+        api.professions.fetchAll().then((data) => setProfession(data))
+    }, [])
+
     const handleChange = ({ target }) => {
         setData((prevState) => ({
             ...prevState,
@@ -15,7 +24,6 @@ const RegisterForm= () => {
         }))
     }
 
-    // Конфигурация для валидатора
     const validatorConfig = {
         email: {
             isRequired: {
@@ -30,7 +38,7 @@ const RegisterForm= () => {
                 message: 'Пароль обязателен для заполнения'
             },
             isCapitalSymbol: {
-                message: 'Пароль должен содержать хотя бы одну заглваную букву'
+                message: 'Пароль должен содержать хотя бы одну заглавную букву'
             },
             isContainDigit: {
                 message: 'Пароль должен содержать хотя бы одну цифру'
@@ -39,15 +47,18 @@ const RegisterForm= () => {
                 message: 'Пароль должен состоять минимум из 8 символов',
                 value: 8
             }
+        },
+        profession: {
+            isRequired: {
+                message: 'Обязательно выберите вашу профессию'
+            }
         }
     }
 
-    // Используем хук useEffect для валидации данных при каждом изменении состояния
     useEffect(() => {
         validate()
     }, [data])
 
-    // Функция валидации
     const validate = () => {
         const errors = validator(data, validatorConfig)
         setErrors(errors)
@@ -55,32 +66,42 @@ const RegisterForm= () => {
     }
     const isValid = Object.keys(errors).length === 0
 
-    // Обработчик отправки формы
     const handleSubmit = (e) => {
         e.preventDefault()
         const isValid = validate()
         if (!isValid) return
     }
 
-    // Рендерим форму с помощью компонента TextField
     return (
         <form onSubmit={handleSubmit}>
             <TextField
                 label='Электронная почта'
                 name='email'
-                value={data.email}
                 onChange={handleChange}
+                value={data.email}
                 error={errors.email}
             />
             <TextField
                 label='Пароль'
                 type='password'
                 name='password'
-                value={data.password}
                 onChange={handleChange}
+                value={data.password}
                 error={errors.password}
             />
-            <button className='btn btn-outline-secondary m-3 border-2' type='submit' disabled={!isValid}>
+            <SelectField
+                label='Выбери свою профессию'
+                defaultOption='Выберите...'
+                options={professions}
+                onChange={handleChange}
+                value={data.profession}
+                error={errors.profession}
+            />
+            <button
+                className='btn btn-outline-secondary m-3 border-2'
+                type='submit'
+                disabled={!isValid}
+            >
                 Submit
             </button>
         </form>

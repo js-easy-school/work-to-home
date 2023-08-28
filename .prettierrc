@@ -4,11 +4,11 @@
   "semi": false,
   "singleQuote": true,
   "trailingComma": "none",
-  "printWidth": 120,
+  "printWidth": 100,
   "jsxSingleQuote": true,
-  "jsxBracketSameLine": true,
+  "jsxBracketSameLine": false,
   "multilineTernary": true,
-  "bracketSameLine": true,
+  "bracketSameLine": false,
   "overrides": [
     {
       "files": "src/app/components/formUlbi.jsx",
